@@ -16,7 +16,7 @@ public class Practice2 {
         String url = "jdbc:mysql://127.0.0.1:3306/mydatabase";
         String password = "";
         String user = "root";
-        String query = "insert into employees(id,name,jobtitle,salary) values (100,'Kelly','Web Developer',80000) ,(101,'andachor','web',20);";
+        String query = "delete from employees where id = 102;";
 
 
         try {
@@ -26,9 +26,9 @@ public class Practice2 {
             Statement stmt = connection.createStatement();
             int rowsAffected = stmt.executeUpdate(query);
             if (rowsAffected>0){
-                System.out.println("Insert Successful "+ rowsAffected);
+                System.out.println("Deletion Successful "+ rowsAffected +" row(s) affected");
             }else {
-                System.out.println("Insertion Failed");
+                System.out.println("Deletion Failed");
             }
             stmt.close();
             connection.close();
